@@ -1,0 +1,10 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>KIBER AVTOPILOT — TikTok callback</title><style>body{font-family:monospace;max-width:720px;margin:60px auto;padding:0 20px;background:#0a0a08;color:#ffb000}code{font-size:1.2em;word-break:break-all;display:block;background:#1a1a14;padding:14px;border-radius:6px;margin:14px 0}</style></head><body>
+<h2>TikTok authorization</h2>
+<p id="msg">Waiting for parameters…</p>
+<code id="code"></code>
+<script>
+const p = new URLSearchParams(location.search);
+if (p.get('code')) { document.getElementById('msg').textContent = 'Authorized. Copy this code back to the terminal:'; document.getElementById('code').textContent = p.get('code'); }
+else if (p.get('error')) { document.getElementById('msg').textContent = 'Denied: ' + p.get('error'); }
+</script>
+</body></html>
